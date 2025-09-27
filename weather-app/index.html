@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #0077cc, #00bfff);
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+    input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      background: yellow;
+      color: black;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .weather-box {
+      margin-top: 20px;
+      padding: 20px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌦 Weather App</h1>
+  <input type="text" id="cityInput" placeholder="enter city name">
+  <button onclick="getWeather()">Get Weather</button>
+
+  <div class="weather-box" id="weather"></div>
+
+  <script>
+    async function getWeather() {
+      const city = document.getElementById("cityInput").value;
+      const apiKey = "537a33eaa224a0cb1bd7db5c0848bdbf"; // replace with your OpenWeatherMap API key
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.cod === "404") {
+        document.getElementById("weather").innerHTML = `<p>City not found ❌</p>`;
+      } else {
+       document.getElementById("weather").innerHTML = `
+           <h2>${data.name}, ${data.sys.country}</h2>
+           <p>🌡 Temperature: ${data.main.temp}°C (Feels like: ${data.main.feels_like}°C)</p>
+           <p>☁ Weather: ${data.weather[0].description}</p>
+           <p>💧 Humidity: ${data.main.humidity}%</p>
+           <p>🌡 Min: ${data.main.temp_min}°C | Max: ${data.main.temp_max}°C</p>
+           <p>💨 Wind: ${data.wind.speed} m/s</p>
+           <p>📊 Pressure: ${data.main.pressure} hPa</p>
+           <p>👁 Visibility: ${data.visibility / 1000} km</p>
+           <p>🌅 Sunrise: ${new Date(data.sys.sunrise * 1000).toLocaleTimeString()}</p>
+           <p>🌇 Sunset: ${new Date(data.sys.sunset * 1000).toLocaleTimeString()}</p>
+           <p>☁ Clouds: ${data.clouds.all}%</p>
+          `;
+      }
+    }
+  </script>
+</body>
+</html>

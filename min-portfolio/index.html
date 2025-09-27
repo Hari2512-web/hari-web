@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bio</title>
+
+  <!-- CSS inside same file -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #6dd5ed, #2193b0);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      width: 350px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #2193b0;
+      margin-bottom: 15px;
+      object-fit: cover; /* keeps image ratio nice */
+    }
+
+    h1 {
+      color: #2193b0;
+    }
+
+    .tagline {
+      font-style: italic;
+      color: #555;
+    }
+
+    a {
+      color: #2193b0;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Make sure profile.jpg is in same folder as this HTML file -->
+    <img src="Hari_pic.jpg" alt="My Photo" class="profile-pic">
+    <h1>Hello, I'm Harimohan 👋</h1>
+    <p class="tagline">CSE Student | IoT Enthusiast | Aspiring Developer</p>
+    
+    <section class="About">
+      <h2>About Me</h2>
+      <p>
+        I'm a Computer Science student specializing in IoT. 
+        I love logic building,problem solving and smart innovation. 
+        I aim to become a skilled full-stack developer.
+      </p>
+    </section>
+    
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:harimohan851133@gmail.com">harimohan851133@gmail.com</a></p>
+      <p>GitHub: <a href="#">github.com/harimohan</a></p>
+    </section>
+  </div>
+</body>
+</html>

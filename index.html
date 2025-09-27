@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harimohan | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f4f4f9;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: #0077cc;
+      padding: 1rem;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: yellow;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(to right, #0077cc, #00bfff);
+      color: white;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.1);
+    }
+
+    .highlight {
+      color: yellow;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #0077cc;
+      display: inline-block;
+    }
+
+    /* Skills */
+    .skills-container {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .skill {
+      background: #0077cc;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .skill:hover {
+      background: #005f99;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #0077cc;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <img src="Hari_pic.jpg" alt="Harimohan" class="profile-pic">
+    <h1>Hello, I'm <span class="highlight">Harimohan</span> 👋</h1>
+    <p>CSE Student | IoT Enthusiast | Aspiring Developer</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a Computer Science student specializing in IoT.  
+      I love coding, problem-solving, and building cool projects.  
+      My goal is to become a skilled full-stack developer.
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <span class="skill">HTML</span>
+      <span class="skill">CSS</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">Python</span>
+      <span class="skill">IoT</span>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Weather App</h3>
+        <p>A simple weather app using HTML, CSS & JS.</p>
+        <a href="weather-app/index.html">View Project</a>
+      </div>
+      <!-- <div class="project-card">
+        <h3>IoT Smart Home</h3>
+        <p>Smart Home Automation project using IoT sensors.</p>
+        <a href="#">View Project</a>
+      </div> -->
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>This personal portfolio site with CSS styling.</p>
+        <a href="min-portfolio/index.html">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:harimohan851133@gmail.com">harimohan851133@gmail.com</a></p>
+    <p>GitHub: <a href="">github.com/harimohan</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Harimohan. Built with ❤️ and CSS.</p>
+  </footer>
+</body>
+</html>
